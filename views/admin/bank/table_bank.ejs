@@ -37,7 +37,12 @@
             <td><%= bank[i].nomorRekening %></td>
             <td><%= bank[i].name %></td>
             <td>
-              <img src="http://localhost:4000/<%= bank[i].imageUrl %>" alt="imageUrl" width='70px' height='auto'>
+              <img
+                src="<% process.env.APP_URL %>/<%= bank[i].imageUrl %>"
+                alt="imageUrl"
+                width="70px"
+                height="auto"
+              />
             </td>
             <td>
               <form

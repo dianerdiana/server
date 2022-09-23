@@ -11,7 +11,7 @@
       <div class="card shadow mb-4">
         <div class="card-body">
           <img
-            src="http://localhost:4000/<%= item.imageId[x].imageUrl %>"
+            src="<% process.env.APP_URL %>/<%= item.imageId[x].imageUrl %>"
             alt="image"
             width="100%"
             style="display: block"

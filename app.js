@@ -6,17 +6,14 @@ const logger = require('morgan')
 const methodOverride = require('method-override')
 const session = require('express-session')
 const flash = require('connect-flash')
+
+require('dotenv').config()
+
 // import mongo db
 const mongoose = require('mongoose')
-mongoose.connect(
-  'mongodb+srv://dierdragoon_staycation:4sptnP2a2$Z_CsK@cluster0.uljloaq.mongodb.net/db_staycation?retryWrites=true&w=majority',
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-  }
-)
+mongoose
+  .connect('mongodb://localhost:27017/db_staycation')
+  .catch((error) => console.log(error))
 
 const indexRouter = require('./routes/index')
 const usersRouter = require('./routes/users')
